@@ -1,0 +1,251 @@
+.analysis-result {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.analysis-result.safe {
+  border-left: 6px solid #10b981;
+}
+
+.analysis-result.unsafe {
+  border-left: 6px solid #ef4444;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 28px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #f0f1f3 100%);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.result-icon {
+  min-width: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.result-header h2 {
+  font-size: 24px;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.result-header p {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.result-details {
+  padding: 28px;
+}
+
+.detail-item {
+  margin-bottom: 24px;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  display: block;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.risk-indicator {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.risk-bar {
+  flex: 1;
+  height: 28px;
+  background: #e5e7eb;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.risk-fill {
+  height: 100%;
+  transition: width 0.5s ease-out;
+  border-radius: 14px;
+}
+
+.risk-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1f2937;
+  min-width: 50px;
+}
+
+.risk-level {
+  padding: 4px 12px;
+  background: #f0f1f3;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.monospace {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  color: #1f2937;
+  word-break: break-all;
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.indicator-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.indicator-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #fee2e2;
+  border-left: 3px solid #ef4444;
+  margin-bottom: 8px;
+  border-radius: 4px;
+  color: #7f1d1d;
+  font-size: 14px;
+}
+
+.indicator-list svg {
+  min-width: 16px;
+  color: #ef4444;
+}
+
+.method-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  background: #dbeafe;
+  color: #1e40af;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.likelihood-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f0f1f3;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.trust-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #f0f1f3;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #1f2937;
+}
+
+.recommendation-text {
+  background: #fef3c7;
+  border-left: 4px solid #f59e0b;
+  padding: 12px;
+  border-radius: 6px;
+  color: #92400e;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.result-recommendation {
+  padding: 24px 28px;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.recommendation-safe,
+.recommendation-unsafe {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.recommendation-safe svg {
+  color: #10b981;
+  min-width: 20px;
+  margin-top: 2px;
+}
+
+.recommendation-unsafe svg {
+  color: #ef4444;
+  min-width: 20px;
+  margin-top: 2px;
+}
+
+.recommendation-safe strong {
+  color: #047857;
+}
+
+.recommendation-safe p {
+  color: #065f46;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.recommendation-unsafe strong {
+  color: #dc2626;
+}
+
+.recommendation-unsafe p {
+  color: #991b1b;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .result-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .result-details,
+  .result-recommendation {
+    padding: 16px;
+  }
+
+  .risk-indicator {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
