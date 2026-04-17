@@ -289,7 +289,7 @@ Processing Time: ${analysis.processingTime}ms
       {/* Explanation Section */}
       <div className="info-section">
         <h2 className="section-title">📋 Analysis Explanation</h2>
-        <p className="explanation-text">{analysis.explanation}</p>
+        <p className="explanation-text" style={{"color": "black", "text-align": "center"}}>{analysis.explanation}</p>
       </div>
 
       {/* Recommendations Section */}

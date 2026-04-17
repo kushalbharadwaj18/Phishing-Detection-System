@@ -60,6 +60,7 @@ router.post(
         trustLevel: detectionResult.trustLevel,
         analysisMethod: detectionResult.analysisMethod,
         detailedAnalysis: detectionResult.detailedAnalysis,
+        contentAnalyzed: detectionResult.contentAnalyzed,
         processingTime: detectionResult.processingTime,
       });
 
@@ -255,18 +256,18 @@ router.get('/analytics/dashboard', verifyToken, async (req, res) => {
         value: item.count,
       })),
       riskDistribution: [
-        { range: '0-20', count: riskDistribution.find((r) => r._id === 0)?.output?.count || 0 },
-        { range: '20-40', count: riskDistribution.find((r) => r._id === 20)?.output?.count || 0 },
-        { range: '40-60', count: riskDistribution.find((r) => r._id === 40)?.output?.count || 0 },
-        { range: '60-80', count: riskDistribution.find((r) => r._id === 60)?.output?.count || 0 },
-        { range: '80-100', count: riskDistribution.find((r) => r._id === 80)?.output?.count || 0 },
+        { range: '0-20', count: riskDistribution.find((r) => r._id === 0)?.count || 0 },
+        { range: '20-40', count: riskDistribution.find((r) => r._id === 20)?.count || 0 },
+        { range: '40-60', count: riskDistribution.find((r) => r._id === 40)?.count || 0 },
+        { range: '60-80', count: riskDistribution.find((r) => r._id === 60)?.count || 0 },
+        { range: '80-100', count: riskDistribution.find((r) => r._id === 80)?.count || 0 },
       ],
       safeDistribution: [
-        { range: '0-20', count: safeDistribution.find((r) => r._id === 0)?.output?.count || 0 },
-        { range: '20-40', count: safeDistribution.find((r) => r._id === 20)?.output?.count || 0 },
-        { range: '40-60', count: safeDistribution.find((r) => r._id === 40)?.output?.count || 0 },
-        { range: '60-80', count: safeDistribution.find((r) => r._id === 60)?.output?.count || 0 },
-        { range: '80-100', count: safeDistribution.find((r) => r._id === 80)?.output?.count || 0 },
+        { range: '0-20', count: safeDistribution.find((r) => r._id === 0)?.count || 0 },
+        { range: '20-40', count: safeDistribution.find((r) => r._id === 20)?.count || 0 },
+        { range: '40-60', count: safeDistribution.find((r) => r._id === 40)?.count || 0 },
+        { range: '60-80', count: safeDistribution.find((r) => r._id === 60)?.count || 0 },
+        { range: '80-100', count: safeDistribution.find((r) => r._id === 80)?.count || 0 },
       ],
       recentAnalyses,
     });

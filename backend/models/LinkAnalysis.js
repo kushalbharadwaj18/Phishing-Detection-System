@@ -44,7 +44,7 @@ const linkAnalysisSchema = new mongoose.Schema(
     },
     analysisMethod: {
       type: String,
-      enum: ['llm', 'heuristic', 'heuristic_fallback'],
+      enum: ['llm', 'heuristic', 'heuristic_fallback', 'ML+llm', 'ML+heuristic', 'ML+heuristic_fallback'],
     },
     detailedAnalysis: {
       suspiciousDomainPatterns: [String],
@@ -52,8 +52,15 @@ const linkAnalysisSchema = new mongoose.Schema(
       domainAge: String,
       sslCertificateStatus: String,
       commonPhishingIndicators: [String],
+      websiteContentAnalysis: String,
+      websiteRedFlags: [String],
+      contentRiskScore: Number,
       trustScore: Number,
       securityAssessment: String,
+    },
+    contentAnalyzed: {
+      type: Boolean,
+      default: false,
     },
     analysisTimestamp: {
       type: Date,
