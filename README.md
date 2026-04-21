@@ -10,7 +10,8 @@ A full-stack web application that uses AI/LLM to detect phishing websites and ma
 - Pattern recognition for suspicious URLs
 - SSL/TLS certificate verification
 - Domain reputation analysis
-
+  
+  
 
 🔐 **User Authentication**
 - Secure user registration and login
